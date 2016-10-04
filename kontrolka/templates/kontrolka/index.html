@@ -1,0 +1,11 @@
+
+      {% if test_list %}
+      <h1>Please, select the test</h1>
+        <ul>
+      {% for Kontrolka in test_list %}
+          <li><a href="{% url 'detail' Kontrolka.id %}">{{ Kontrolka.ktr_name }}</a></li>
+      {% endfor %}
+        </ul>
+      {% else %}
+        <p>No tests are available.</p>
+      {% endif %}

@@ -1,0 +1,16 @@
+
+      {% if questions %}
+      <h1>Please, provide answers for each questions one by one</h1>
+        <ul>
+      {% for q in questions %}
+          <li>{{ q.Question.question_text }}</li>
+          <ul>
+          {% for choice in q.Answers %}
+          	<li>{{ choice.choice_text }}</li>
+          {% endfor %}
+          </ul>>
+      {% endfor %}
+        </ul>
+      {% else %}
+        <p>No questions are available.</p>
+      {% endif %}
